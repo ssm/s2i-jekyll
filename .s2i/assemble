@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -u
+set -e
+
+echo "---> Installing site source ..."
+mv -v /tmp/src/* /tmp/src/.??* ./
+
+echo "---> Building site ..."
+jekyll build
