@@ -4,7 +4,7 @@ set -u
 set -e
 
 echo "---> Installing site source ..."
-mv -v /tmp/src/* /tmp/src/.??* ./
+mv -v /tmp/src/* ./
 
 echo "---> Building site ..."
 jekyll build
