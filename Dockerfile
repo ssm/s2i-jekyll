@@ -2,6 +2,8 @@ FROM debian:stretch
 
 MAINTAINER Stig Sandbeck Mathisen <ssm@fnord.no>
 
+LABEL io.openshift.s2i.scripts-url=image:///usr/local/share/s2i
+
 # Install packages needed for building and serving a jekyll site
 RUN apt-get update \
  && apt-get --no-install-recommends -y install jekyll ruby-gsl webfs linkchecker \
@@ -9,6 +11,8 @@ RUN apt-get update \
  && find /var/lib/apt/lists -type f -delete
 
 EXPOSE 8080
+
+COPY .s2i/* /usr/local/share/s2i/
 
 RUN install -o 0 -g 0 -m 0775 -d /srv/content
 WORKDIR /srv/content
