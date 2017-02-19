@@ -2,8 +2,11 @@ FROM debian:stretch
 
 MAINTAINER Stig Sandbeck Mathisen <ssm@fnord.no>
 
-LABEL io.openshift.s2i.scripts-url=image:///usr/local/share/s2i
-
+LABEL io.k8s.description="Platform for building and serving static website content" \
+      io.openshift.s2i.scripts-url=image:///usr/local/share/s2i \
+      io.openshift.expose-services="8080:http" \
+      io.openshift.tags="builder,httpd"
+ 
 # Install packages needed for building and serving a jekyll site
 RUN apt-get update \
  && apt-get --no-install-recommends -y install jekyll ruby-gsl webfs linkchecker \
