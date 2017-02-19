@@ -4,4 +4,4 @@ set -u
 set -e
 
 echo " ---> Starting web server"
-exec webfsd -F -p 8080 -f index.html
+exec jekyll serve
