@@ -2,9 +2,6 @@ FROM debian:stretch
 
 MAINTAINER Stig Sandbeck Mathisen <ssm@fnord.no>
 
-# Debug install dependencies
-RUN echo 'Debug::pkgDepCache::AutoInstall true;' > /etc/apt/apt.conf.d/debug
-
 # Install packages needed for building and serving a jekyll site
 RUN apt-get update \
  && apt-get --no-install-recommends -y install jekyll ruby-gsl webfs linkchecker \
