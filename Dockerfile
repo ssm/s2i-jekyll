@@ -9,7 +9,13 @@ LABEL io.k8s.description="Platform for building and serving static website conte
  
 # Install packages needed for building and serving a jekyll site
 RUN apt-get update \
- && apt-get --no-install-recommends -y install jekyll ruby-gsl webfs linkchecker \
+ && apt-get --no-install-recommends -y install \
+    gettext \
+    jekyll \
+    libnss-wrapper \
+    linkchecker \
+    ruby-gsl \
+    webfs \
  && apt-get clean \
  && find /var/lib/apt/lists -type f -delete
 
