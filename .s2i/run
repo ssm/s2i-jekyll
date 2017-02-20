@@ -5,6 +5,7 @@ set -e
 
 echo " ---> Debug"
 find . -ls
+cat /srv/content/_site/about/index.html
 
 echo " ---> Starting web server"
 exec jekyll serve
