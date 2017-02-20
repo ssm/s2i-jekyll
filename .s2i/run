@@ -8,4 +8,4 @@ find . -ls
 cat /srv/content/_site/about/index.html
 
 echo " ---> Starting web server"
-exec jekyll serve
+exec webfsd -F -p 8080 -f index.html
