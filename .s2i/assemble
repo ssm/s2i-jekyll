@@ -3,8 +3,5 @@
 set -u
 set -e
 
-echo "---> Installing site source ..."
-mv -v /tmp/src/* ./
-
-echo "---> Building site ..."
-jekyll build
+echo "---> Building static web site ..."
+jekyll build --source /srv/tmp --destination /srv/content --lsi

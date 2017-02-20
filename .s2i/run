@@ -4,8 +4,8 @@ set -u
 set -e
 
 echo " ---> Debug"
+pwd
 find . -ls
-cat /srv/content/_site/about/index.html
 
 echo " ---> Starting web server"
-exec webfsd -F -p 8080 -f index.html
+exec webfsd -F -r /srv/content -p 4000 -f index.html
