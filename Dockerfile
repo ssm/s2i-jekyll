@@ -22,6 +22,7 @@ RUN apt-get update \
 EXPOSE 4000
 
 COPY .s2i/* /usr/local/share/s2i/
+COPY passwd.template /srv
 
 RUN install -o 0 -g 0 -m 0775 -d /srv/content
 WORKDIR /srv/content
