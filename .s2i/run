@@ -3,5 +3,8 @@
 set -u
 set -e
 
+echo " ---> Debug"
+find . -ls
+
 echo " ---> Starting web server"
 exec jekyll serve
