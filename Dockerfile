@@ -9,7 +9,7 @@ LABEL io.k8s.description="Platform for building and serving static website conte
  
 # Install packages needed for building and serving a jekyll site
 RUN apt-get update \
- && apt-get --no-install-recommends -y install \
+ && DEBIAN_FRONTEND=noninteractive apt-get -q -y --no-install-recommends install \
     gettext \
     jekyll \
     libnss-wrapper \
