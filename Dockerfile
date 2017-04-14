@@ -7,6 +7,8 @@ LABEL io.k8s.description="Platform for building and serving static website conte
       io.openshift.expose-services="4000:http" \
       io.openshift.tags="builder,httpd"
  
+COPY dpkg-excludes /etc/dpkg/dpkg.cfg.d/
+
 # Install packages needed for building and serving a jekyll site
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get -q -y --no-install-recommends install \
