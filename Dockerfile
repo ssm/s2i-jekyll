@@ -17,7 +17,7 @@ RUN apt-get update \
     ruby-gsl \
     webfs \
  && apt-get clean \
- && find /var/lib/apt/lists -type f -delete
+ && find /var/lib/apt/lists /var/cache -type f -delete
 
 EXPOSE 4000
 
