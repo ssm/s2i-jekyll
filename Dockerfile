@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-LABEL maintainer "Stig Sandbeck Mathisen <ssm@fnord.no" \
+LABEL maintainer="Stig Sandbeck Mathisen <ssm@fnord.no" \
       io.k8s.description="Platform for building and serving static website content" \
       io.openshift.s2i.scripts-url=image:///usr/local/share/s2i \
       io.openshift.expose-services="4000:http" \
